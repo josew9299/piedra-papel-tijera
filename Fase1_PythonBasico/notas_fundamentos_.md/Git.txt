@@ -1,0 +1,29 @@
+Conceptos básicos de GIT y GITHUB
+
+
+Comandos básicos:
+
+cd (y el nombre de la carpeta):
+Nos permite acceder a una carpeta local ya creada y pasar de una carpeta a otra(Navegar entre carpetas)
+
+mdkdir (mas el nombre de la carpeta ): Nos permite crear una carpeta nueva dentro de la carpeta en la cual estoy actualmente
+
+ls: Nos permite ver todo el contenido de un directorio en el que estamos
+También nos permite ver archivos
+Los archivos no terminan con una barra, los directorios(carpetas) sí
+
+cd .. : este comando “cd ..”nos permite ir una carpeta atrás(volver a la carpeta anterior)
+cd : Sólo poniendo el comando “cd” vuelvo al directorio raíz
+
+rm dir (más el nombre del directorio) : Este comando elimina el directorio si está dentro del directorio que estamos actualmente
+
+clear : este comando borra los comandos anteriores
+
+git config –global user.name “JosephS” : Este comando nos permite configurar un nombre de usuario para todos los repositorios
+
+git config user.name : Este comando nos permite ver el usuario configurado
+
+git config –global user.email “correo@user.com” : Este comando nos permite configurar un correo para todos los repositorios
+Es recomendable no usar un correo personal
+
+git config user.email : Este comando nos permite ver el correo configurado.
