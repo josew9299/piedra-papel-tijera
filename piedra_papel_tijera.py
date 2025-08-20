@@ -1,3 +1,4 @@
+# Juego de Piedra, Papel o Tijera en Python, implementado con validación robusta y modularidad.
 import random
 p_p_t = ["Piedra", "Papel", "Tijera"]
 puntaje_user = 0
@@ -10,6 +11,10 @@ def user_w():
 def tie():
     print("Ha habido un empate parcial")
 
+def puntaje():
+    global puntaje_user
+    global puntaje_compu
+    print(f"Puntaje Tú - {puntaje_user}, Computadora - {puntaje_compu}")
 
 
 def jugar():
@@ -40,10 +45,26 @@ def jugar():
         puntaje_compu +=1
     if compu == elec_usuario:
         tie()
-    print (f"Puntaje:\nTú = {puntaje_user} \nComputadora = {puntaje_compu}")
+    puntaje()
+
+print("¡Bienvenido a Piedra, Papel o Tijera!")
 
 while True:#Bucle principal para repetir rondas del juego
     jugar()
-    jugar_de_nuevo = input("Jugar otra ronda?: ")
-    jugar_den_nuevo = jugar_de_nuevo.lower()
-    
+    jugar_de_nuevo = input("¿Jugar otra ronda? (sí/s/no/n): ")   
+    jugar_de_nuevo = jugar_de_nuevo.lower()
+    while jugar_de_nuevo not in ["si","s","no","n"]:
+        print("Entrada no válida, ingresa 'sí', 's', 'no', o 'n'")
+        jugar_de_nuevo = input("¿Jugar otra ronda? (sí/s/no/n): ")
+        jugar_de_nuevo = jugar_de_nuevo.lower()
+    if jugar_de_nuevo in["no","n"]:
+        break
+
+puntaje()
+print("¡Hasta luego!")
+input("")
+
+#Completado: Validación de entrada, elección de computadora, comparaciones simplificadas, puntajes actualizados (Partes 1-4).
+#Completado: Bucle principal para múltiples rondas con validación robusta de 'jugar_de_nuevo' (Parte 5).
+#Completado: Añadida función puntaje para mostrar puntajes de forma consistente y modular.
+#Finalizado: Juego completamente funcional con mensajes claros y formato consistente.
