@@ -1,5 +1,6 @@
 # Juego de Piedra, Papel o Tijera en Python, implementado con validación robusta y modularidad.
 import random
+# Juego de Piedra, Papel o Tijera en Python, implementado con validación robusta, puntajes modulares y mensajes claros.
 p_p_t = ["Piedra", "Papel", "Tijera"]
 puntaje_user = 0
 puntaje_compu = 0
@@ -26,13 +27,12 @@ def jugar():
     global puntaje_user
     global puntaje_compu
 
-    #Validar entrada del ususario
+    #Validar entrada del usuario
     while elec_usuario not in p_p_t:
         elec_usuario = input("Ingresa \"Piedra\", \"Papel\" o \"Tijera\": ")
         elec_usuario = elec_usuario.title()
-        print( "Entrada no válida, elige Piedra, Papel o Tijera")
-        if elec_usuario in p_p_t:
-            break
+        print( "Entrada no válida, ingresa \' Piedra\', \'Papel\' o \'Tijera\'")
+
     #Imprimir elección de usuario y computadora
     print(f"La computadora elegió: {compu}")
     print(f"Tú elejiste: {elec_usuario}")
@@ -65,6 +65,6 @@ print("¡Hasta luego!")
 input("")
 
 #Completado: Validación de entrada, elección de computadora, comparaciones simplificadas, puntajes actualizados (Partes 1-4).
-#Completado: Bucle principal para múltiples rondas con validación robusta de 'jugar_de_nuevo' (Parte 5).
+#Completado: Bucle principal para múltiples rondas con validación robusta de 'jugar_de_nuevo' y mensajes claros con formato estandarizado (Parte 5).
 #Completado: Añadida función puntaje para mostrar puntajes de forma consistente y modular.
-#Finalizado: Juego completamente funcional con mensajes claros y formato consistente.
+# Finalizado: Juego completamente funcional con mensajes consistentes, validación optimizada y correcciones estilísticas.
