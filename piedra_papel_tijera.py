@@ -1,8 +1,16 @@
 # Juego de Piedra, Papel o Tijera en Python, implementado con validación robusta, puntajes modulares y mensajes claros.
+import json
 import random
 p_p_t = ["Piedra", "Papel", "Tijera"]
 puntaje_user = 0
 puntaje_compu = 0
+
+def guardar_puntajes():
+    """Guarda los puntajes en un archivo Json."""
+    puntajes = {"usuario": puntaje_user, "Computadora": puntaje_compu}
+    with open("puntajes.json", "w") as file:
+        json.dump(puntajes, file)
+
 
 def compu_w():
     print("La computadora gana!")
@@ -14,7 +22,7 @@ def tie():
 def puntaje():
     global puntaje_user
     global puntaje_compu
-    print(f"Puntaje Tú - {puntaje_user}, Computadora - {puntaje_compu}")
+    print(f"Puntaje: Tú - {puntaje_user}, Computadora - {puntaje_compu}")
 
 def jugar():
     # Entrada del usuario y elección de la computadora
@@ -55,6 +63,7 @@ while True:  # Bucle principal para repetir rondas del juego
         jugar_de_nuevo = input("¿Jugar otra ronda? (sí/s/no/n): ")
         jugar_de_nuevo = jugar_de_nuevo.lower()
     if jugar_de_nuevo in ["no", "n"]:
+        guardar_puntajes() #Guardar al salir
         break
 
 puntaje()
