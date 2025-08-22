@@ -54,7 +54,8 @@ def jugar():
 
 print("¡Bienvenido a Piedra, Papel o Tijera!")
 
-while True:  # Bucle principal para repetir rondas del juego
+# Resto del código igual, pero añade la llamada a guardar_puntajes() al final del bucle principal
+while True:
     jugar()
     jugar_de_nuevo = input("¿Jugar otra ronda? (sí/s/no/n): ")   
     jugar_de_nuevo = jugar_de_nuevo.lower()
