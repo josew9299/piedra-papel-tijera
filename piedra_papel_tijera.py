@@ -20,8 +20,7 @@ def tie():
     print("Ha habido un empate parcial")
 
 def puntaje():
-    global puntaje_user
-    global puntaje_compu
+    global puntaje_user, puntaje_compu
     print(f"Puntaje: Tú - {puntaje_user}, Computadora - {puntaje_compu}")
 
 def jugar():
@@ -30,27 +29,28 @@ def jugar():
     elec_usuario = elec_usuario.title()
     compu = random.choice(p_p_t)
     # Usar puntajes globales
-    global puntaje_user
-    global puntaje_compu
-
-    # Validar entrada del usuario
-    while elec_usuario not in p_p_t:
-        elec_usuario = input("Ingresa \"Piedra\", \"Papel\" o \"Tijera\": ")
-        elec_usuario = elec_usuario.title()
-        print("Entrada no válida, ingresa 'Piedra', 'Papel' o 'Tijera'")
-    # Imprimir elección de usuario y computadora
-    print(f"La computadora eligió: {compu}")
-    print(f"Tú elegiste: {elec_usuario}")
-    # Compara las elecciones y da el veredicto
-    if compu == "Tijera" and elec_usuario == "Piedra" or compu == "Piedra" and elec_usuario == "Papel" or compu == "Papel" and elec_usuario == "Tijera":
-        user_w()
-        puntaje_user += 1
-    if compu == "Tijera" and elec_usuario == "Papel" or compu == "Piedra" and elec_usuario == "Tijera" or compu == "Papel" and elec_usuario == "Piedra":
-        compu_w()
-        puntaje_compu += 1
-    if compu == elec_usuario:
-        tie()
-    puntaje()
+    global puntaje_user, puntaje_compu
+    try:
+        # Validar entrada del usuario
+        while elec_usuario not in p_p_t:
+            elec_usuario = input("Ingresa \"Piedra\", \"Papel\" o \"Tijera\": ")
+            elec_usuario = elec_usuario.title()
+            print("Entrada no válida, ingresa 'Piedra', 'Papel' o 'Tijera'")
+        # Imprimir elección de usuario y computadora
+        print(f"La computadora eligió: {compu}")
+        print(f"Tú elegiste: {elec_usuario}")
+        # Compara las elecciones y da el veredicto
+        if compu == "Tijera" and elec_usuario == "Piedra" or compu == "Piedra" and elec_usuario == "Papel" or compu == "Papel" and elec_usuario == "Tijera":
+            user_w()
+            puntaje_user += 1
+        if compu == "Tijera" and elec_usuario == "Papel" or compu == "Piedra" and elec_usuario == "Tijera" or compu == "Papel" and elec_usuario == "Piedra":
+            compu_w()
+            puntaje_compu += 1
+        if compu == elec_usuario:
+            tie()
+        puntaje()
+    except ValueError as e:
+        print(f"Error{e}, ingresa 'Piedra', 'Papel' o 'Tijera'")
 
 print("¡Bienvenido a Piedra, Papel o Tijera!")
 
